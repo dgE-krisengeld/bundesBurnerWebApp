@@ -39,7 +39,7 @@ const pages = [
   },
   {
     path: "/",
-    heading: <em>Home!!!!</em>,
+    heading: "Home",
     component: HomeContainer
   }
 ];
