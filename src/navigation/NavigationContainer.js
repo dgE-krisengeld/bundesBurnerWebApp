@@ -2,13 +2,9 @@ import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
-import { HomeContainer } from "../containers/Home/Home";
-import BusinessesContainer from "../containers/Businesses/Businesses";
-import { HelpContainer } from "../containers/Help/Help";
-import { QrCodeContainer } from "../containers/Home/QrCode";
-import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
 import BottomMenu from "./BottomMenu";
-import {Header} from "../components/Utils/Header";
+import { Header } from "../components/Utils/Header";
+import pages from "./pages";
 
 export default function NavigationContainer() {
   return (
@@ -16,25 +12,10 @@ export default function NavigationContainer() {
       <Header />
       <Container fixed>
         <Switch>
-          <Route path="/businesses" component={BusinessesContainer} />
-
-          <Route path="/help">
-            <HelpContainer />
-          </Route>
-
-          <Route path="/scanQR">
-            <QrCodeContainer />
-          </Route>
-
-          <Route path="/myQrCode">
-            <MyQrCodeContainer />
-          </Route>
-
-          <Route path="/">
-            <HomeContainer />
-          </Route>
+          {pages.map(({ path, component }) => (
+            <Route path={path} component={component} key={path} />
+          ))}
         </Switch>
-
       </Container>
       <BottomMenu />
     </Router>
