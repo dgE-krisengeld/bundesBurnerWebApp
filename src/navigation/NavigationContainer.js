@@ -33,8 +33,8 @@ export default function NavigationContainer() {
             <HomeContainer />
           </Route>
         </Switch>
-        <BottomMenu />
       </Container>
+        <BottomMenu />
     </Router>
   );
 }
