@@ -31,6 +31,7 @@ const BottomMenu = ({ location: { pathname } }) => {
       {menuItems.map(({ label, slug, icon }) => (
         <BottomNavigationAction
           label={label}
+          key={slug}
           icon={<Icon>{icon}</Icon>}
           component={Link}
           to={slug}
