@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container";
 import BottomMenu from "./BottomMenu";
 import { Header } from "../components/Utils/Header";
 import pages from "./pages";
+import RouteWithHeader from "./RouteWithHeader";
 
 export default function NavigationContainer() {
   return (
@@ -13,7 +14,7 @@ export default function NavigationContainer() {
       <Container fixed>
         <Switch>
           {pages.map(({ path, component }) => (
-            <Route path={path} component={component} />
+            <Route path={path} component={component} key={path} />
           ))}
         </Switch>
       </Container>
