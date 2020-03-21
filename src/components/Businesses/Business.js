@@ -9,13 +9,13 @@ import {
 } from "@material-ui/core";
 import { getBusinessById } from "../../services/business.service";
 import styled from "styled-components";
+import { useRouteMatch, useHistory } from "react-router-dom";
 
-const BusinessComponent = ({
-  match: {
+const BusinessComponent = () => {
+  const {
     params: { id }
-  },
-  history: { goBack }
-}) => {
+  } = useRouteMatch();
+  const { goBack } = useHistory();
   const business = getBusinessById(id);
   return (
     <>
