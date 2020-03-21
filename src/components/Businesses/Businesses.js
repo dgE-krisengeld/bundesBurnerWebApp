@@ -1,20 +1,25 @@
 import React from "react";
-import { Box, List, ListItem, Icon } from "@material-ui/core";
-import { markers } from "../../dummyData/markers";
+import { Box, List, ListItem, Icon, ListItemIcon } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { getAllBusinesses } from "../../services/business.service";
 
-export function BusinessesComponent() {
+function BusinessesComponent({ match }) {
+  const businesses = getAllBusinesses();
   return (
     <Box>
       <h1>Lokale Geschäfte</h1>
       <List>
-        {Object.entries(markers).map(([key, { coordinates, title, icon }]) => (
-          <ListItem>
-            <h3>
-              <Icon>{icon}</Icon> {title}
-            </h3>
+        {Object.entries(businesses).map(([id, { title, icon }]) => (
+          <ListItem button component={Link} to={`${match.path}/business/${id}`}>
+            <ListItemIcon>
+              <Icon>{icon}</Icon>
+            </ListItemIcon>
+            <h3>{title}</h3>
           </ListItem>
         ))}
       </List>
     </Box>
   );
 }
+
+export default BusinessesComponent;
