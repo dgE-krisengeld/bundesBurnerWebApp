@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { HomeContainer } from "../containers/Home/Home";
-import { BusinessesContainer } from "../containers/Businesses/Businesses";
+import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
 import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
@@ -14,9 +14,8 @@ export default function NavigationContainer() {
     <Router>
       <Container>
         <Switch>
-          <Route path="/businesses">
-            <BusinessesContainer />
-          </Route>
+          <Route path="/businesses" component={BusinessesContainer} />
+
           <Route path="/help">
             <HelpContainer />
           </Route>
@@ -34,7 +33,7 @@ export default function NavigationContainer() {
           </Route>
         </Switch>
       </Container>
-        <BottomMenu />
+      <BottomMenu />
     </Router>
   );
 }
