@@ -45,6 +45,7 @@ const StyledBottomNavigation = styled(BottomNavigation)`
   width: 100%;
   position: fixed;
   bottom: 0;
+  left: 0;
 `;
 
 export default withRouter(BottomMenu);
