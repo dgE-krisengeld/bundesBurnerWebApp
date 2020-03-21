@@ -1,32 +1,75 @@
-import React from 'react';
-import {View, Text, Button, Alert} from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
-import {Icon} from '../Utils/Icon';
+import React from "react";
+import {
+  Box,
+  Icon,
+  List,
+  ListItem,
+  ListItemIcon,
+  IconButton
+} from "@material-ui/core";
+import { getBusinessById } from "../../services/business.service";
+import styled from "styled-components";
 
-export function BusinessComponent({marker}) {
+const BusinessComponent = ({
+  match: {
+    params: { id }
+  },
+  history: { goBack }
+}) => {
+  const business = getBusinessById(id);
   return (
-    <View style={{flex: 1}}>
-      <MapView
-        style={{height: 150}}
-        initialRegion={{
-          latitude: 50.014123,
-          longitude: 8.263218,
-          latitudeDelta: 0.012,
-          longitudeDelta: 0.011,
-        }}>
-        <Marker
-          title={marker.title}
-          key={marker.id}
-          coordinate={marker.coordinates}>
-          <Icon name={marker.icon} style={{color: 'red', fontSize: 22}} />
-        </Marker>
-      </MapView>
-        <View style={{margin: 20}}>
-            <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, animi assumenda aut cum debitis dolores eius esse est laborum maiores modi perferendis provident qui ratione sequi tempora ut vel voluptates.</Text>
-        </View>
-        <View>
-            <Button title={"Bezahlen"} onPress={() => Alert.alert("Pay now")}/>
-        </View>
-    </View>
+    <>
+      <FlexBox>
+        <SpaceContainer>
+          <IconButton onClick={goBack} color="inherit">
+            <Icon>navigate_before</Icon>
+          </IconButton>
+        </SpaceContainer>
+        <h1>
+          {business ? (
+            <>
+              <Icon>{business.icon}</Icon> {business.title}
+            </>
+          ) : (
+            "Nicht gefunden"
+          )}
+        </h1>
+        <SpaceContainer />
+      </FlexBox>
+      {business ? (
+        <Box>
+          <List>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>euro</Icon>
+              </ListItemIcon>
+              <h2>Bezahlen</h2>
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <Icon>money</Icon>
+              </ListItemIcon>
+              <h2>Gutschein kaufen</h2>
+            </ListItem>
+          </List>
+        </Box>
+      ) : (
+        <span>Laden konnte nicht gefunden werden</span>
+      )}
+    </>
   );
-}
+};
+
+const FlexBox = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const SpaceContainer = styled(Box)`
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+`;
+
+export default BusinessComponent;
