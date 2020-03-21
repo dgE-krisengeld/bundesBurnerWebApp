@@ -8,11 +8,13 @@ import { HelpContainer } from "../containers/Help/Help";
 import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
 import BottomMenu from "./BottomMenu";
+import {Header} from "../components/Utils/Header";
 
 export default function NavigationContainer() {
   return (
     <Router>
-      <Container>
+      <Header />
+      <Container fixed>
         <Switch>
           <Route path="/businesses">
             <BusinessesContainer />
@@ -33,8 +35,9 @@ export default function NavigationContainer() {
             <HomeContainer />
           </Route>
         </Switch>
-        <BottomMenu />
+
       </Container>
+      <BottomMenu />
     </Router>
   );
 }

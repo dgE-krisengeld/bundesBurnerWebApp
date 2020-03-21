@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import QrReader from 'react-qr-reader'
-export function QrCodeComponent() {
+export function QrCodeComponent({onScan}) {
     const [result, setResult] = useState(null)
     const previewStyle = {
-        height: 240,
-        width: 320,
+        height: "100%",
+        width: "100%",
     }
 
     const handleScan = (data) => {
@@ -16,6 +16,9 @@ export function QrCodeComponent() {
 
     return (
         <div>
+            <button onClick={() => {
+                onScan("https://bundlesburner.com?privatekey=0x0123456789012345678901234567890123456789012345678901234567890123")
+            }}>scanned</button>
         <QrReader
             delay={100}
             style={previewStyle}
@@ -23,6 +26,8 @@ export function QrCodeComponent() {
             onScan={handleScan}
         />
                 <p>{result}</p>
+
+
         </div>
     );
 }

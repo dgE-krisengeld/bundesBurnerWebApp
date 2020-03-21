@@ -10,13 +10,21 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "ethers": "^4.0.46",
+    "localforage": "^1.7.3",
+    "lodash-es": "^4.17.15",
     "qrcode.react": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-qr-reader": "^2.2.1",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.0.1"
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.0.1",
+    "url-parse": "^1.4.7"
   },
   "scripts": {
     "start": "react-scripts start",
