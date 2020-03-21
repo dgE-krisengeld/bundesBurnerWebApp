@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import { HomeContainer } from "../containers/Home/Home";
 import { BusinessesContainer } from "../containers/Businesses/Businesses";
