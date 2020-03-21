@@ -38,5 +38,37 @@ export const markers = {
     },
     title: "Best Worscht in Town",
     icon: "fastfood"
+  },
+  biz6: {
+    coordinates: {
+      latitude: 49.8748447,
+      longitude: 8.6414999
+    },
+    title: "Blumenparadies",
+    icon: "local_florist"
+  },
+  biz7: {
+    coordinates: {
+      latitude: 49.8715076,
+      longitude: 8.6500398
+    },
+    title: "Programmkino Rex",
+    icon: "local_movies"
+  },
+  biz8: {
+    coordinates: {
+      latitude: 49.8678749,
+      longitude: 8.6483363
+    },
+    title: "Theater Moller Haus",
+    icon: "local_play"
+  },
+  biz9: {
+    coordinates: {
+      latitude: 49.859255,
+      longitude: 8.6502313
+    },
+    title: "Der Bücherwurm",
+    icon: "local_library"
   }
 };
