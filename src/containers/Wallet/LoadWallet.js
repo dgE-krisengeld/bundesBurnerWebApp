@@ -30,7 +30,8 @@ function Container({jsonWallet, setPrivateKey}) {
         }
     }
 
-    return <LoadWalletComponent jsonWallet={jsonWallet} onDecrypt={decrypt} decrypting={decrypting} error={error}/>
+    return <LoadWalletComponent jsonWallet={jsonWallet}
+                                onDecrypt={decrypt} decrypting={decrypting} error={error}/>
 }
 
 const mapStateToProps = (state, ownProps) => {

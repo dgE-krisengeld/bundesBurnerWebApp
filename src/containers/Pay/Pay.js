@@ -18,7 +18,7 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
     const [sending, setSending] = useState(false)
     const history = useHistory()
     const {amount = "", recipient = ""} = useParams()
-    
+
     const send = ({recipient, amount, note}) => {
         const {wallet, contract} = getWalletAndContract(privateKey)
 

@@ -6,6 +6,7 @@ import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
 import {LoadWalletContainer} from "../containers/Wallet/LoadWallet";
 import {PayContainer} from "../containers/Pay/Pay";
+import {OpenContainer} from "../containers/Open/Open";
 
 const pages = [
   {
@@ -46,6 +47,11 @@ const pages = [
     path: "/receive",
     heading: "Empfangen",
     component: HomeContainer
+  },
+  {
+    path: "/open/:json",
+    heading: "Wallet laden",
+    component: OpenContainer
   },
   {
     path: "/loadWallet",

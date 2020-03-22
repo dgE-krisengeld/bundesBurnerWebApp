@@ -21,6 +21,17 @@ export function Container(props) {
           return;
         }
 
+      if(link.pathname.startsWith("/open/")) {
+        const keystore = link.pathname.replace("/open/", "")
+        const decodedKeystore = JSON.parse(decodeURIComponent(keystore))
+
+        if (decodedKeystore.address) {
+          props.setWalletJSon(JSON.stringify(decodedKeystore))
+
+          history.push("/loadWallet");
+        }
+      }
+
         if(link?.query?.send && link?.query?.address) {
           history.push(`/pay/${link?.query?.address}/${link?.query?.send}`);
 
