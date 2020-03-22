@@ -9,12 +9,7 @@ function BusinessesComponent({ match }) {
     <Box>
       <List>
         {Object.entries(businesses).map(([id, { title, icon }]) => (
-          <ListItem
-            button
-            component={Link}
-            to={`${match.path}/business/${id}`}
-            key={id}
-          >
+          <ListItem button component={Link} to={`/businesses/${id}`} key={id}>
             <ListItemIcon>
               <Icon>{icon}</Icon>
             </ListItemIcon>

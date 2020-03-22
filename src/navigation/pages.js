@@ -4,9 +4,13 @@ import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
 import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
-import {LoadWalletContainer} from "../containers/Wallet/LoadWallet";
-import {PayContainer} from "../containers/Pay/Pay";
-import {OpenContainer} from "../containers/Open/Open";
+import { LoadWalletContainer } from "../containers/Wallet/LoadWallet";
+import { PayContainer } from "../containers/Pay/Pay";
+import { OpenContainer } from "../containers/Open/Open";
+import BusinessesComponent from "../components/Businesses/Businesses";
+import { Icon } from "@material-ui/core";
+import { getBusinessById } from "../services/business.service";
+import BusinessComponent from "../components/Businesses/Business";
 
 const pages = [
   {
@@ -22,9 +26,22 @@ const pages = [
     backButton: true
   },
   {
+    path: "/businesses/:id",
+    heading: ({ id }) => {
+      const business = getBusinessById(id);
+      return business ? business.title : "Nicht gefunden";
+    },
+    headingRight: ({ id }) => {
+      const business = getBusinessById(id);
+      return business && <Icon>{business.icon}</Icon>;
+    },
+    backButton: true,
+    component: BusinessComponent
+  },
+  {
     path: "/businesses",
     heading: "Geschäfte in deiner Nähe",
-    component: BusinessesContainer
+    component: BusinessesComponent
   },
   {
     path: "/help",
