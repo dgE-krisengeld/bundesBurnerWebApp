@@ -27,4 +27,5 @@ const ContentContainer = styled(Container)`
   display: flex !important;
   flex-direction: column;
   flex-grow: 1;
+  margin-bottom: 60px;
 `;

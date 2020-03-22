@@ -24,11 +24,11 @@ export const Header = props => {
     <>
       <AppBar position="sticky">
         <Toolbar>
-          {page?.backButton && (
+          {page?.backButton ? (
             <IconButton onClick={goBack} color="inherit">
               <Icon>navigate_before</Icon>
             </IconButton>
-          )}
+          ) : <IconButton></IconButton>}
 
           <Typography variant="h6" className={classes.title}>
             {page?.heading}

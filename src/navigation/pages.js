@@ -4,6 +4,7 @@ import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
 import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
+import {LoadWalletContainer} from "../containers/Wallet/LoadWallet";
 
 const pages = [
   {
@@ -36,6 +37,11 @@ const pages = [
     path: "/receive",
     heading: "Empfangen",
     component: HomeContainer
+  },
+  {
+    path: "/loadWallet",
+    heading: "Wallet laden",
+    component: LoadWalletContainer
   },
   {
     path: "/",

@@ -4,28 +4,30 @@ import {getPrivateKey} from "../../state/wallet/selector";
 import {connect} from "react-redux";
 import parse from "url-parse"
 import { useHistory } from "react-router-dom";
-import {setPrivateKey} from "../../state/wallet/actions";
+import {setPrivateKey, setWalletJSon} from "../../state/wallet/actions";
 
 export function Container(props) {
   let history = useHistory();
 
-  return <QrCodeComponent onScan={(link) => {
-    const parsedLink = parse(link, true)
+  return <QrCodeComponent onScan={(data) => {
 
-    props.setPrivateKey(parsedLink.query.privatekey)
-    history.push("/");
+    console.log('on scan data', data)
+    if(data) {
+      props.setWalletJSon(data)
+      history.push("/loadWallet");
+    }
+
   }}/>;
 }
 
 const mapStateToProps = (state, ownProps) => {
 
   return {
-    privateKey: getPrivateKey(state)
   }
 }
 
 const mapDispatchToProps = {
-  setPrivateKey: setPrivateKey
+  setWalletJSon: setWalletJSon
 }
 
 export const QrCodeContainer = connect(
