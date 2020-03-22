@@ -269,10 +269,12 @@ const abi = [
         "type": "function"
     }
 ]
-let contractAddress = "0x40089B4198f6adCe8F713A501cFb627a38974f79";
-let provider = ethers.getDefaultProvider("goerli");
+let contractAddress = "0x956604d347412EAD40401af1eba87F0f847A1F01";
+// let provider = ethers.getDefaultProvider("goerli");
+//
 
-
+let url = "https://tlbc.rpc.anyblock.tools";
+let provider = new ethers.providers.JsonRpcProvider(url);
 const loadWallet = (privateKey) => {
     if (!etherWallet) {
         etherWallet = new ethers.Wallet(privateKey, provider)

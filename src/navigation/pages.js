@@ -5,17 +5,20 @@ import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
 import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
 import {LoadWalletContainer} from "../containers/Wallet/LoadWallet";
+import {PayContainer} from "../containers/Pay/Pay";
 
 const pages = [
   {
     path: "/scanQR",
     heading: "Scanne QR",
-    component: QrCodeContainer
+    component: QrCodeContainer,
+    backButton: true
   },
   {
     path: "/myQrCode",
     heading: "Mein QR-Code",
-    component: MyQrCodeContainer
+    component: MyQrCodeContainer,
+    backButton: true
   },
   {
     path: "/businesses",
@@ -29,8 +32,8 @@ const pages = [
   },
   {
     path: "/pay",
-    heading: "Zahlen",
-    component: HomeContainer,
+    heading: "Geld senden",
+    component: PayContainer,
     backButton: true
   },
   {

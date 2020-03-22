@@ -7,7 +7,6 @@ function BusinessesComponent({ match }) {
   const businesses = getAllBusinesses();
   return (
     <Box>
-      <h1>Lokale Geschäfte</h1>
       <List>
         {Object.entries(businesses).map(([id, { title, icon }]) => (
           <ListItem

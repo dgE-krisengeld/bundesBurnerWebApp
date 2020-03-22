@@ -1,10 +1,9 @@
 import React from 'react';
 import {QrCodeComponent} from '../../components/Home/QrCode';
-import {getPrivateKey} from "../../state/wallet/selector";
 import {connect} from "react-redux";
 import parse from "url-parse"
 import { useHistory } from "react-router-dom";
-import {setPrivateKey, setWalletJSon} from "../../state/wallet/actions";
+import { setWalletJSon} from "../../state/wallet/actions";
 
 export function Container(props) {
   let history = useHistory();
@@ -13,8 +12,19 @@ export function Container(props) {
 
     console.log('on scan data', data)
     if(data) {
-      props.setWalletJSon(data)
-      history.push("/loadWallet");
+      if(data.startsWith("https://")) {
+        const link = parse(data, true)
+
+        if(link?.query?.keystore) {
+          props.setWalletJSon(link.query.keystore)
+          history.push("/loadWallet");
+        }
+        console.log(link)
+      } else {
+        props.setWalletJSon(data)
+        history.push("/loadWallet");
+      }
+
     }
 
   }}/>;
