@@ -5,19 +5,26 @@ import Container from "@material-ui/core/Container";
 import BottomMenu from "./BottomMenu";
 import { Header } from "../components/Utils/Header";
 import pages from "./pages";
+import styled from "styled-components";
 
 export default function NavigationContainer() {
   return (
     <Router>
       <Header />
-      <Container fixed>
+      <ContentContainer>
         <Switch>
           {pages.map(({ path, component }) => (
             <Route path={path} component={component} key={path} />
           ))}
         </Switch>
-      </Container>
+      </ContentContainer>
       <BottomMenu />
     </Router>
   );
 }
+
+const ContentContainer = styled(Container)`
+  display: flex !important;
+  flex-direction: column;
+  flex-grow: 1;
+`;
