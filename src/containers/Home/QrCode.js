@@ -10,39 +10,26 @@ export function Container(props) {
 
   return <QrCodeComponent onScan={(data) => {
 
-    console.log('on scan data', data)
     if(data) {
       if(data.startsWith("https://")) {
         const link = parse(data, true)
 
-        if(link?.query?.keystore) {
-          props.setWalletJSon(link.query.keystore)
-          history.push("/loadWallet");
-          return;
+        if(link.pathname.startsWith("/open/")) {
+          history.push(link.pathname);
         }
 
-      if(link.pathname.startsWith("/open/")) {
-        const keystore = link.pathname.replace("/open/", "")
-        const decodedKeystore = JSON.parse(decodeURIComponent(keystore))
-
-        if (decodedKeystore.address) {
-          props.setWalletJSon(JSON.stringify(decodedKeystore))
-
-          history.push("/loadWallet");
+        if(link.pathname.startsWith("/pay/")) {
+          history.push(link.pathname);
         }
-      }
 
-        if(link?.query?.send && link?.query?.address) {
-          history.push(`/pay/${link?.query?.address}/${link?.query?.send}`);
-
-          return;
-        }
-        console.log(link)
       } else {
-        props.setWalletJSon(data)
-        history.push("/loadWallet");
-      }
+        const maybeAJSONWallet = JSON.parse(data)
 
+        if(maybeAJSONWallet.address) {
+          props.setWalletJSon(JSON.stringify(data))
+          history.push("/loadWallet");
+        }
+      }
     }
 
   }}/>;
