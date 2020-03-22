@@ -19,7 +19,19 @@ export const Header = props => {
   const location = useLocation();
   const { goBack } = useHistory();
   const classes = useStyles();
-  const page = pages.find(({ path }) => location.pathname === path);
+  const page = pages.find(({ path }) => {
+    const urlSlugs = location.pathname.split("/").filter(slug => slug.length);
+    const pageSlugs = path.split("/").filter(slug => slug.length);
+    if (pageSlugs.length > urlSlugs.length) return false;
+
+    return pageSlugs.reduce((acc, pageSlug, index) => {
+      const urlSlug = urlSlugs[index];
+
+      if (pageSlug.substring(0, 1) === ":") return acc;
+
+      return acc && pageSlug === urlSlug;
+    }, true);
+  });
   return (
     <>
       <AppBar position="sticky">
@@ -28,7 +40,9 @@ export const Header = props => {
             <IconButton onClick={goBack} color="inherit">
               <Icon>navigate_before</Icon>
             </IconButton>
-          ) : <IconButton></IconButton>}
+          ) : (
+            <IconButton></IconButton>
+          )}
 
           <Typography variant="h6" className={classes.title}>
             {page?.heading}
