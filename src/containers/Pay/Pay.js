@@ -29,7 +29,6 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
 
                 const interval = setInterval(() => {
                     wallet.provider.getTransaction(data.hash).then((transaction) => {
-                        console.log("tr", transaction);
 
                         if(transaction.blockNumber && transaction.confirmations > 0) {
 

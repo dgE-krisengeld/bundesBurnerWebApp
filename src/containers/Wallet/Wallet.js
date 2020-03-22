@@ -28,7 +28,6 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
         if(contract && wallet) {
             const getBalance = async () => {
                 const myBalance = await contract.balanceOf(wallet.signingKey.address)
-                console.log(utils.formatEther(myBalance))
                 setBalance(new Decimal(utils.formatEther(myBalance)).toFixed(2))
             }
 

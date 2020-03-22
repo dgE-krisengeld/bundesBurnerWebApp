@@ -270,8 +270,6 @@ const abi = [
     }
 ]
 let contractAddress = "0x956604d347412EAD40401af1eba87F0f847A1F01";
-// let provider = ethers.getDefaultProvider("goerli");
-//
 
 let url = "https://tlbc.rpc.anyblock.tools";
 let provider = new ethers.providers.JsonRpcProvider(url);
@@ -293,15 +291,12 @@ const getContract = () => {
 
 
     let contractWithSigner = contract.connect(etherWallet);
-    console.log('contract WTF', contract, etherWallet, contractWithSigner)
     return contractWithSigner
 }
 
 export const getWalletAndContract = (privateKey) => {
     const wallet = loadWallet(privateKey)
     const contract = getContract()
-
-    console.log('get wallet and contract', wallet, contract)
     return { wallet, contract}
 }
 

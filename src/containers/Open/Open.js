@@ -10,7 +10,6 @@ function Container(props) {
     useEffect(() => {
         if(json) {
             const decodedJson = JSON.parse(decodeURIComponent(json))
-            console.log("decoded json", decodedJson, decodedJson.address)
             if(decodedJson.address) {
                 props.setWalletJSon(JSON.stringify(decodedJson))
                 history.push("/loadWallet")

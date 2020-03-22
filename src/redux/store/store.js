@@ -13,7 +13,6 @@ if (
     global.window &&
     global.window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 ) {
-    console.log("pusg")
     composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         maxAge: 100,
         serialize: {
