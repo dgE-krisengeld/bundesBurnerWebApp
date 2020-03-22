@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Icon,
-  List,
-  ListItem,
-  ListItemIcon,
-  IconButton
-} from "@material-ui/core";
+import { Box, Icon, List, ListItem, ListItemIcon } from "@material-ui/core";
 import { getBusinessById } from "../../services/business.service";
-import styled from "styled-components";
 import { useRouteMatch } from "react-router-dom";
 
 const BusinessComponent = () => {
@@ -37,16 +29,5 @@ const BusinessComponent = () => {
     <span>Laden konnte nicht gefunden werden</span>
   );
 };
-const FlexBox = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const SpaceContainer = styled(Box)`
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-start;
-`;
 
 export default BusinessComponent;

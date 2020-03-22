@@ -45,8 +45,6 @@ export const Header = props => {
       return acc;
     }, {});
 
-  console.log(params);
-
   const content =
     typeof page?.heading === "function" ? page?.heading(params) : page?.heading;
 

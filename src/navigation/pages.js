@@ -2,7 +2,6 @@ import React from "react";
 import { HomeContainer } from "../containers/Home/Home";
 import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
-import BusinessesContainer from "../containers/Businesses/Businesses";
 import { HelpContainer } from "../containers/Help/Help";
 import { LoadWalletContainer } from "../containers/Wallet/LoadWallet";
 import { PayContainer } from "../containers/Pay/Pay";
