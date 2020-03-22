@@ -24,7 +24,7 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
 
         setSending(true)
 
-        contract.transfer(recipient, utils.parseUnits(amount, 18), overrides)
+        contract.transfer(recipient, utils.parseUnits(amount.trim(), 18), overrides)
             .then(async data => {
 
                 const interval = setInterval(() => {
