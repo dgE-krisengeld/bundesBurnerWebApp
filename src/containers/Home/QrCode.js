@@ -18,6 +18,13 @@ export function Container(props) {
         if(link?.query?.keystore) {
           props.setWalletJSon(link.query.keystore)
           history.push("/loadWallet");
+          return;
+        }
+
+        if(link?.query?.send && link?.query?.address) {
+          history.push(`/pay/${link?.query?.address}/${link?.query?.send}`);
+
+          return;
         }
         console.log(link)
       } else {

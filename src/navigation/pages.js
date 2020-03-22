@@ -31,6 +31,12 @@ const pages = [
     component: HelpContainer
   },
   {
+    path: "/pay/:recipient/:amount",
+    heading: "Geld senden",
+    component: PayContainer,
+    backButton: true
+  },
+  {
     path: "/pay",
     heading: "Geld senden",
     component: PayContainer,

@@ -4,7 +4,7 @@ import {getPrivateKey} from "../../state/wallet/selector";
 import { utils } from 'ethers';
 import {getWalletAndContract} from "../../utils/Wallet";
 import {PayComponent} from "../../components/Pay/Pay";
-import {useHistory} from "react-router-dom"
+import {useHistory, useParams} from "react-router-dom"
 
 let overrides = {
     // The maximum units of gas for the transaction to use
@@ -17,7 +17,8 @@ let overrides = {
 function Container({privateKey, setPrivateKey, setWalletJson}) {
     const [sending, setSending] = useState(false)
     const history = useHistory()
-
+    const {amount = "", recipient = ""} = useParams()
+    
     const send = ({recipient, amount, note}) => {
         const {wallet, contract} = getWalletAndContract(privateKey)
 
@@ -46,7 +47,7 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
                 alert("Etwas ist schief gegangen: " + error.toString)
             })
     }
-    return <PayComponent onSubmit={send} sending={sending} />
+    return <PayComponent onSubmit={send} sending={sending} amount={amount} recipient={recipient}/>
 }
 
 const mapStateToProps = (state, ownProps) => {

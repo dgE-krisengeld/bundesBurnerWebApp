@@ -9,10 +9,10 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import CenterFocus from '@material-ui/icons/CenterFocusWeak';
 
-export function PayComponent({onSubmit, sending}) {
+export function PayComponent({onSubmit, sending, ...rest}) {
     const history = useHistory()
-    const [recipient, setRecipient] = useState("")
-    const [amount, setAmount] = useState("")
+    const [recipient, setRecipient] = useState(rest.recipient)
+    const [amount, setAmount] = useState(rest.amount)
     const [note, setNote] = useState("")
     return (
         <div>
