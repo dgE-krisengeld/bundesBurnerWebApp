@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
-import CenterFocus from '@material-ui/icons/CenterFocusWeak';
+import { Icon } from '@material-ui/core';
 
 export function PayComponent({onSubmit, sending, ...rest}) {
     const history = useHistory()
@@ -39,7 +39,7 @@ export function PayComponent({onSubmit, sending, ...rest}) {
                                     history.push("scanQR")
                                 }}
                             >
-                                {<CenterFocus />}
+                                {<Icon>center_focus_weak</Icon>}
                             </IconButton>
                         </InputAdornment>
                     }
