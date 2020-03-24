@@ -8,7 +8,7 @@ import {useHistory, useParams} from "react-router-dom"
 
 let overrides = {
     // The maximum units of gas for the transaction to use
-    gasLimit: 8000000,
+    gasLimit: 50000,
     gasPrice: utils.parseUnits('1.0', 'gwei'),
     chainId: 4660
 };
