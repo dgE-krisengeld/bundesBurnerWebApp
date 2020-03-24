@@ -43,7 +43,7 @@ function Container({privateKey, setPrivateKey, setWalletJson}) {
             })
             .catch(error => {
                 setSending(false)
-                alert("Etwas ist schief gegangen: " + error.toString)
+                alert("Etwas ist schief gegangen: " + error)
             })
     }
     return <PayComponent onSubmit={send} sending={sending} amount={amount} recipient={recipient}/>
