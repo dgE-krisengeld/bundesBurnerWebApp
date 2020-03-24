@@ -16,7 +16,7 @@ export function LoadWalletComponent({jsonWallet, onDecrypt, decrypting, error}) 
             {decrypting && <div
                 style={{position: "absolute", right: 0, left: 0, bottom: 0, top: 0, background: "rgba(0,0,0,0.6)", pointerEvents: "none", zIndex: 9999 }}>
 
-                <div style={{marginTop: 200, textAlign: "center", color: '#FFF'}}>Bitte warten, wir entsperen Ihren Wallet.</div>
+                <div style={{marginTop: 200, textAlign: "center", color: '#FFF'}}>Bitte warten, wir entsperren Ihren Wallet.</div>
             </div>
             }
             Sie versuchen den folgenden Wallet zu laden
@@ -28,7 +28,7 @@ export function LoadWalletComponent({jsonWallet, onDecrypt, decrypting, error}) 
                 Bitte Ihre Steuernummer eingeben
                 <TextField id="taxId"  name={"tax-id"} value={taxId} onChange={handleChange} label={"Steuer-ID"}/>
                 <div style={{marginTop: 20}}>
-                    <Button variant="contained" color="primary" onClick={() => onDecrypt(taxId)}>Entsperen</Button>
+                    <Button variant="contained" color="primary" onClick={() => onDecrypt(taxId)}>Entsperren</Button>
                 </div>
         </div>
     );
