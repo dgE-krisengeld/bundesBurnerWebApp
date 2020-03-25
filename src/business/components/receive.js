@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 
 import qrcode from "../../assets/qrcode.png";
+import { AppBarSpacer } from "./app-bar-spacer";
 
 export const Receive = () => {
   const { goBack } = useHistory();
@@ -30,6 +31,7 @@ export const Receive = () => {
           <FillSpace />
         </Toolbar>
       </AppBar>
+      <AppBarSpacer />
       <p></p>
       <Form>
         <TextField

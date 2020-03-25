@@ -11,6 +11,7 @@ import {
   IconButton,
   Icon
 } from "@material-ui/core";
+import { AppBarSpacer } from "./app-bar-spacer";
 
 export const Dashboard = () => {
   return (
@@ -46,10 +47,6 @@ export const Dashboard = () => {
     </PageContainer>
   );
 };
-
-const AppBarSpacer = styled.div`
-  height: 56px;
-`;
 
 const MobileHidden = styled.div`
   display: none;
