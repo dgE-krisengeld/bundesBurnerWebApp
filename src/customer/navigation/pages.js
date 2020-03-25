@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HomeContainer } from "../containers/Home/Home";
 import { QrCodeContainer } from "../containers/Home/QrCode";
 import { MyQrCodeContainer } from "../containers/Home/MyQrCode";
@@ -7,9 +7,48 @@ import { LoadWalletContainer } from "../containers/Wallet/LoadWallet";
 import { PayContainer } from "../containers/Pay/Pay";
 import { OpenContainer } from "../containers/Open/Open";
 import BusinessesComponent from "../components/Businesses/Businesses";
-import { Icon } from "@material-ui/core";
+import {
+  Icon,
+  IconButton,
+  Menu,
+  MenuItem,
+  ListItemIcon
+} from "@material-ui/core";
 import { getBusinessById } from "../services/business.service";
 import BusinessComponent from "../components/Businesses/Business";
+import { Link } from "react-router-dom";
+
+const HomeMenu = () => {
+  const [menuAnchorElement, setMenuAnchorElement] = useState(null);
+  return (
+    <>
+      <IconButton
+        aria-controls="business-menu"
+        aria-haspopup="true"
+        color="inherit"
+        onClick={event => {
+          setMenuAnchorElement(event.currentTarget);
+        }}
+      >
+        <Icon>arrow_drop_down</Icon>
+      </IconButton>
+      <Menu
+        id="business-menu"
+        anchorEl={menuAnchorElement}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        onClose={() => setMenuAnchorElement(null)}
+        open={Boolean(menuAnchorElement)}
+      >
+        <MenuItem component={Link} to="/business">
+          <ListItemIcon>
+            <Icon fontSize="small">store</Icon>
+          </ListItemIcon>
+          zur dg€-App für Geschäftsinhaber
+        </MenuItem>
+      </Menu>
+    </>
+  );
+};
 
 const pages = [
   {
@@ -77,7 +116,8 @@ const pages = [
   {
     path: "/",
     heading: "Home",
-    component: HomeContainer
+    component: HomeContainer,
+    headingRight: HomeMenu
   }
 ];
 

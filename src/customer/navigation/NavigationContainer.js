@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import BottomMenu from "./BottomMenu";
 import { Header } from "../components/Utils/Header";
@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 export default function NavigationContainer() {
   return (
-    <Router>
+    <>
       <Header />
       <ContentContainer>
         <Switch>
@@ -19,7 +19,7 @@ export default function NavigationContainer() {
         </Switch>
       </ContentContainer>
       <BottomMenu />
-    </Router>
+    </>
   );
 }
 
