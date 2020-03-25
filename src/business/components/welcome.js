@@ -8,12 +8,19 @@ import ActionButton from "./action-button";
 export const Welcome = () => {
   return (
     <PageContainer>
-      <h1>Willkommen</h1>
-      <p>dgE (sprich: diggi) - App für Geschäfte</p>
+      <h1>dg€-App für Geschäfte</h1>
+      <p>
+        Besitzen Sie ein lokales Geschäft, das durch die Corona-Krise finanziell
+        gefährdet ist?
+      </p>
+      <p>
+        Nutzen Sie <b>dg€</b> (sprich: "diggi") als Zahlungsmöglichkeit für Ihr
+        Geschäft und profitieren Sie von zielgerichteter Wirtschaftsförderung!
+      </p>
       <Logo src={logo} alt="dgE Logo" />
       <p>
         <ActionButton component={Link} to="/business/register">
-          Jetzt registrieren
+          Diggi, los geht's!
         </ActionButton>
       </p>
     </PageContainer>
@@ -21,6 +28,7 @@ export const Welcome = () => {
 };
 
 const Logo = styled.img`
-  width: 400px;
+  width: 300px;
   max-width: 100%;
+  margin: 10px;
 `;
