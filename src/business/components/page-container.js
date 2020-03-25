@@ -5,8 +5,9 @@ const PageContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 56px;
+  padding: 10px;
   height: 100%;
+  text-align: center;
 `;
 
 export default PageContainer;
