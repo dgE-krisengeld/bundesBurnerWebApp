@@ -21,7 +21,7 @@ export const Dashboard = () => {
             <Typography variant="h6">dg€ for Business</Typography>
           </MobileHidden>
           <FillSpaceMobileHidden />
-          <Typography variant="h6">20 dgE</Typography>
+          <Typography variant="h6">20 dg€ </Typography>
 
           <FillSpace />
           <Typography variant="h7">Best Worscht in Town</Typography>
@@ -30,7 +30,8 @@ export const Dashboard = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <h1>Willkommen</h1>
+      <AppBarSpacer />
+      <h1>dg€-App für Geschäfte</h1>
       <Logo src={logo} alt="dgE Logo" />
       <p>
         <ActionButton component={Link} to="/business/receive">
@@ -45,6 +46,10 @@ export const Dashboard = () => {
     </PageContainer>
   );
 };
+
+const AppBarSpacer = styled.div`
+  height: 56px;
+`;
 
 const MobileHidden = styled.div`
   display: none;
@@ -66,6 +71,6 @@ const FillSpaceMobileHidden = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 300px;
+  width: 200px;
   max-width: 100%;
 `;
