@@ -1,4 +1,5 @@
 # BundesBurner WebApp
+[![<ORG_NAME>](https://circleci.com/gh/dgE-krisengeld/bundesBurnerWebApp.svg?style=shield)](https://app.circleci.com/pipelines/github/dgE-krisengeld/bundesBurnerWebApp)
 
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/dgE-krisengeld/community)
 
@@ -14,3 +15,6 @@ $ yarn
 $ yarn run start
 ```
 
+## Workflow
+This repo uses the git-flow pattern to create fixes and features. 
+To find out how it works check this: https://nvie.com/posts/a-successful-git-branching-model/
