@@ -1,0 +1,48 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:13.6.0-browsers
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: "~"
+          paths:
+            - project
+
+  run-lint:
+    docker:
+      - image: circleci/node:13.6.0-browsers
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run:
+          name: Run eslint
+          command: |
+            yarn lint
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - build
+
+      - run-lint:
+          requires:
+            - build
+
