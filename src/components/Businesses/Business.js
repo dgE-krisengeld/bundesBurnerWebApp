@@ -1,13 +1,13 @@
-import React from "react";
-import { Box, Icon, List, ListItem, ListItemIcon } from "@material-ui/core";
-import { getBusinessById } from "../../services/business.service";
-import { useRouteMatch } from "react-router-dom";
+import React from "react"
+import { Box, Icon, List, ListItem, ListItemIcon } from "@material-ui/core"
+import { getBusinessById } from "../../services/business.service"
+import { useRouteMatch } from "react-router-dom"
 
 const BusinessComponent = () => {
   const {
-    params: { id }
-  } = useRouteMatch();
-  const business = getBusinessById(id);
+    params: { id },
+  } = useRouteMatch()
+  const business = getBusinessById(id)
   return business ? (
     <Box>
       <List>
@@ -27,7 +27,7 @@ const BusinessComponent = () => {
     </Box>
   ) : (
     <span>Laden konnte nicht gefunden werden</span>
-  );
-};
+  )
+}
 
-export default BusinessComponent;
+export default BusinessComponent

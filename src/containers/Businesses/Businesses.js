@@ -1,7 +1,7 @@
-import React from "react";
-import BusinessesComponent from "../../components/Businesses/Businesses";
-import { Route, Switch } from "react-router-dom";
-import BusinessComponent from "../../components/Businesses/Business";
+import React from "react"
+import BusinessesComponent from "../../components/Businesses/Businesses"
+import { Route, Switch } from "react-router-dom"
+import BusinessComponent from "../../components/Businesses/Business"
 
 export default function BusinessesContainer({ match }) {
   return (
@@ -9,5 +9,5 @@ export default function BusinessesContainer({ match }) {
       <Route path={`${match.url}/business/:id`} component={BusinessComponent} />
       <Route path={`${match.url}`} component={BusinessesComponent} />
     </Switch>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import {WalletContainer} from "../../containers/Wallet/Wallet";
+import React from "react"
+import { WalletContainer } from "../../containers/Wallet/Wallet"
 
-export function HomeComponent(props) {
+export function HomeComponent() {
   return (
     <div>
-        <WalletContainer />
+      <WalletContainer />
     </div>
-  );
+  )
 }

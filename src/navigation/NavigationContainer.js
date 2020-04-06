@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Container from "@material-ui/core/Container";
-import BottomMenu from "./BottomMenu";
-import { Header } from "../components/Utils/Header";
-import pages from "./pages";
-import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Container from "@material-ui/core/Container"
+import BottomMenu from "./BottomMenu"
+import { Header } from "../components/Utils/Header"
+import pages from "./pages"
+import styled from "styled-components"
 
 export default function NavigationContainer() {
   return (
@@ -20,7 +20,7 @@ export default function NavigationContainer() {
       </ContentContainer>
       <BottomMenu />
     </Router>
-  );
+  )
 }
 
 const ContentContainer = styled(Container)`
@@ -28,4 +28,4 @@ const ContentContainer = styled(Container)`
   flex-direction: column;
   flex-grow: 1;
   margin-bottom: 60px;
-`;
+`

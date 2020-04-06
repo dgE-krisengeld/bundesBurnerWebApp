@@ -1,9 +1,9 @@
-import { markers } from "../dummyData/markers";
+import { markers } from "../dummyData/markers"
 
 export function getAllBusinesses() {
-  return markers;
+  return markers
 }
 
 export function getBusinessById(id) {
-  return markers[id];
+  return markers[id]
 }

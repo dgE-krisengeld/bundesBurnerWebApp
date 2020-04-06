@@ -1,9 +1,9 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import { useHistory } from "react-router-dom";
+import React from "react"
+import Button from "@material-ui/core/Button"
+import { useHistory } from "react-router-dom"
 
-export function WalletComponent({ wallet, onDelete, balance }) {
-  const history = useHistory();
+export function WalletComponent({ wallet, balance }) {
+  const history = useHistory()
 
   if (!wallet) {
     return (
@@ -12,13 +12,13 @@ export function WalletComponent({ wallet, onDelete, balance }) {
           variant="contained"
           color="primary"
           onClick={() => {
-            history.push("scanQR");
+            history.push("scanQR")
           }}
         >
           Geldbörse laden
         </Button>
       </div>
-    );
+    )
   }
 
   return (
@@ -28,7 +28,7 @@ export function WalletComponent({ wallet, onDelete, balance }) {
           flexDirection: "column",
           justifycontent: "center",
           alignItems: "center",
-          marginTop: 50
+          marginTop: 50,
         }}
       >
         <div style={{ fontSize: 48 }}>{balance}</div>
@@ -44,7 +44,7 @@ export function WalletComponent({ wallet, onDelete, balance }) {
           right: -10,
           padding: "0 40px",
           display: "flex",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
         }}
       >
         <Button
@@ -57,5 +57,5 @@ export function WalletComponent({ wallet, onDelete, balance }) {
         </Button>
       </div>
     </div>
-  );
+  )
 }

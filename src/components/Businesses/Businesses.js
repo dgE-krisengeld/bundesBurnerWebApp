@@ -1,10 +1,10 @@
-import React from "react";
-import { Box, List, ListItem, Icon, ListItemIcon } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { getAllBusinesses } from "../../services/business.service";
+import React from "react"
+import { Box, List, ListItem, Icon, ListItemIcon } from "@material-ui/core"
+import { Link } from "react-router-dom"
+import { getAllBusinesses } from "../../services/business.service"
 
-function BusinessesComponent({ match }) {
-  const businesses = getAllBusinesses();
+function BusinessesComponent() {
+  const businesses = getAllBusinesses()
   return (
     <Box>
       <List>
@@ -18,7 +18,7 @@ function BusinessesComponent({ match }) {
         ))}
       </List>
     </Box>
-  );
+  )
 }
 
-export default BusinessesComponent;
+export default BusinessesComponent
