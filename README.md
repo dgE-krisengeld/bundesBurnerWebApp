@@ -18,3 +18,9 @@ $ yarn run start
 ## Workflow
 This repo uses the git-flow pattern to create fixes and features. 
 To find out how it works check this: https://nvie.com/posts/a-successful-git-branching-model/
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+We require you to sign our [CLA](https://gist.github.com/compojoom/008d17456d40b93e34940aa08d9488b6) when you create PRs to this repo
