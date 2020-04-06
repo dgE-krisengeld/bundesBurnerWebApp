@@ -1,5 +1,7 @@
 # BundesBurner WebApp
 [![<ORG_NAME>](https://circleci.com/gh/dgE-krisengeld/bundesBurnerWebApp.svg?style=shield)](https://app.circleci.com/pipelines/github/dgE-krisengeld/bundesBurnerWebApp)
+[![CLA assistant](https://cla-assistant.io/readme/badge/dgE-krisengeld/bundesBurnerWebApp)](https://cla-assistant.io/dgE-krisengeld/bundesBurnerWebApp)
+
 
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/dgE-krisengeld/community)
 
