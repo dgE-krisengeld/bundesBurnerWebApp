@@ -14,3 +14,6 @@ $ yarn
 $ yarn run start
 ```
 
+## Workflow
+This repo uses the git-flow pattern to create fixes and features. 
+To find out how it works check this: https://nvie.com/posts/a-successful-git-branching-model/
