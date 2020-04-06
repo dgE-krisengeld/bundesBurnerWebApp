@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "deploy": "npm run build && firebase deploy",
     "eject": "react-scripts eject",
-    "lint": "eslint --max-warnings 550 src/ \"*.js\"",
+    "lint": "eslint --max-warnings 50 src/",
     "lint:fix": "eslint src  --fix",
     "lint:staged": "lint-staged",
     "format": "prettier --write \"src/**/*.js\" \"*.js\""
