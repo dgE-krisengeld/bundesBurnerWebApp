@@ -25,7 +25,7 @@
     "redux-actions": "^2.6.5",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.0.1",
-    "url-parse": "^1.4.7"
+    "url-parse": "^1.5.9"
   },
   "scripts": {
     "start": "react-scripts start",
